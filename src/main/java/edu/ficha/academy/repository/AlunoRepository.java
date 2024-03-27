@@ -18,10 +18,6 @@ public interface AlunoRepository extends JpaRepository<AlunoModel, Integer> {
 	public AlunoModel findByMatricula(int id);
 	
 	@Modifying
-	@Query("update AlunoModel a set a.objetivo = :objetivo where a.nome =:nome ")
-	public void atualizarObjetivo(@Param("objetivo") String objetivo, @Param("nome") String nome);
-	
-	@Modifying
 	@Query("delete from AlunoModel a where a.nome = :nome")
 	public void deletarAluno(@Param("nome") String nome);
 	

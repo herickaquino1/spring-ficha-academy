@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import edu.ficha.academy.model.ProfessorModel;
 
 @Repository
-public interface ProfessorRepository extends JpaRepository<ProfessorModel, Integer > {
+public interface ProfessorRepository extends JpaRepository<ProfessorModel, Integer> {
 
 		public ProfessorModel findByMatricula(int matricula);
 		
@@ -18,7 +18,7 @@ public interface ProfessorRepository extends JpaRepository<ProfessorModel, Integ
 		@Modifying
 		@Query("delete from ProfessorModel p where p.nome = :nome")
 		public void deletarProfessor(@Param("nome") String nome);
-	
+		
 	
 	
 

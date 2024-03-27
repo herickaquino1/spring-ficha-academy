@@ -9,14 +9,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "aluno")
+@Table(name = "Aluno")
 public class AlunoModel {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "matricula")
-	private Integer matricula;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "matricula_aluno")
+	private int matricula;
 	
 	@Column(name = "curso")
 	private String curso;

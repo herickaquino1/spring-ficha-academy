@@ -20,10 +20,10 @@ import jakarta.transaction.Transactional;
 public class ProfessorController {
 	
 	@Autowired
-	ProfessorRepository professor;
+	public ProfessorRepository professor;
 	
+	@Transactional
 	@PostMapping("/cadastrar")
-	
 	public void cadastrarProfessores(@RequestBody ProfessorModel prof) {
 		professor.save(prof);
 	}
@@ -33,14 +33,14 @@ public class ProfessorController {
 		return professor.findByMatricula(matricula);
 	}
 	
-	@GetMapping("/retornar/{nome}")
+	@GetMapping("/retornar/nome/{nome}")
 	public ProfessorModel retornarPorNome(@PathVariable("nome")String nome) {
 		return professor.findByNome(nome);
 	}
 	
 	@Transactional
-	@DeleteMapping("/deletar")
-	public void deletarProfessor(String nome) {
+	@DeleteMapping("/deletar/{nome}")
+	public void deletarProfessor(@PathVariable("nome") String nome) {
 		professor.deletarProfessor(nome);
 	}
 

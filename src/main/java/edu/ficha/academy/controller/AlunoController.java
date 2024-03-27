@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,11 +52,6 @@ public class AlunoController {
 				"Peso: " + al.getPeso() + " | " + "Altura: " + al.getAltura();
 	}
 	
-	@Transactional
-	@PutMapping("/atualizar/objetivo/{objetivo}/{nome}")
-	public void atualizarObjetivo(@PathVariable("objetivo") String objetivo,@PathVariable("nome") String nome) {
-		aluno.atualizarObjetivo(objetivo, nome);
-	}
 	
 	@Transactional
 	@DeleteMapping("/deletar/{nome}")
