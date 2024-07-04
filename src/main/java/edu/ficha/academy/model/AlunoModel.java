@@ -1,5 +1,6 @@
 package edu.ficha.academy.model;
 
+ 
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

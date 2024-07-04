@@ -7,14 +7,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import edu.ficha.academy.model.ProfessorModel;
+import jakarta.transaction.Transactional;
 
 @Repository
 public interface ProfessorRepository extends JpaRepository<ProfessorModel, Integer> {
-
-		public ProfessorModel findByMatricula(int matricula);
 		
 		public ProfessorModel findByNome(String nome);
 		
+		@Transactional
 		@Modifying
 		@Query("delete from ProfessorModel p where p.nome = :nome")
 		public void deletarProfessor(@Param("nome") String nome);
